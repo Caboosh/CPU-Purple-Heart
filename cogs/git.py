@@ -1,8 +1,14 @@
+from mock.mock import self
+import git
+import gitdb
 import cogs.checks as checks
 from discord.ext import commands
+from git import Repo
 import asyncio
 import discord
 
+join = osp.join
+repo = Repo(self.rorepo.working_tree_dir)
 
 class Git:
     """Various GitPython Commands.
@@ -13,6 +19,8 @@ Proper Syntax for commands are:
 """
     def __init__(self, bot):
         self.bot = bot
+
+
 
     @commands.group(invoke_without_command=True)
     @checks.has_permissions(manage_server=True)

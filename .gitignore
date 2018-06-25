@@ -1,5 +1,5 @@
 .idea
 __pycache__
 bot-env
-cogs/botconfig.py
+cogs\botconfig.py
 
