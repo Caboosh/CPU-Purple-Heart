@@ -7,8 +7,9 @@ from git import Repo
 import asyncio
 import discord
 
-join = osp.join
+join = osp
 repo = Repo(self.rorepo.working_tree_dir)
+
 
 class Git:
     """Various GitPython Commands.
@@ -19,8 +20,6 @@ Proper Syntax for commands are:
 """
     def __init__(self, bot):
         self.bot = bot
-
-
 
     @commands.group(invoke_without_command=True)
     @checks.has_permissions(manage_server=True)

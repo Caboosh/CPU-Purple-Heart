@@ -3,9 +3,9 @@ import traceback
 import discord
 import asyncio
 from discord.ext import commands
-from cogs.botconfig import token
-from cogs.botconfig import prefix
-from cogs.botconfig import botdesc
+from botconfig import token
+from botconfig import prefix
+from botconfig import botdesc
 import cogs.checks as checks
 
 
