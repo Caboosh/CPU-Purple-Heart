@@ -1,14 +1,7 @@
-from mock.mock import self
-import git
-import gitdb
 import cogs.checks as checks
 from discord.ext import commands
-from git import Repo
 import asyncio
 import discord
-
-join = osp
-repo = Repo(self.rorepo.working_tree_dir)
 
 
 class Git:
@@ -41,8 +34,8 @@ Proper Syntax for commands are:
     @git.command()
     async def repo(self, ctx):
         """Brings up the Repo of the bot (useful if people want to know where the fork is from)"""
-        await ctx.send('''`This bot was coded by Cabooshy#6969 in the discord.py rewrite! 
-        Nep's github repo is: https://github.com/Caboosh/CPU-Purple-Heart/`''')
+        await ctx.send('''This bot was coded by Cabooshy#6969 in the discord.py rewrite! 
+Nep's github repo is: https://github.com/Caboosh/CPU-Purple-Heart/''')
 
     @git.command()
     async def help(self, ctx):

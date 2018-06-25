@@ -1,3 +1,4 @@
+from discord.ext.commands import is_owner
 import cogs.checks as checks
 from discord.ext import commands
 import asyncio
@@ -113,6 +114,21 @@ class Admin:
         else:
             await ctx.send('\N{OK HAND SIGN}')
 
+    @commands.command()
+    @checks.check_guild_permissions(ctx, perms)
+    async def avatar(self, url):
+        """Sets Nep's avatar"""
+        try:
+            async with self.session.get(url) as r:
+                data = await r.read()
+            await self.bot.edit_profile(self.bot.settings.password, avatar=data)
+            await self.bot.say("Done.")
+            log.debug("changed avatar")
+        except Exception as e:
+            await self.bot.say("Error, check your console or logs for "
+                               "more information.")
+            log.exception(e)
+            traceback.print_exc()
 
 def setup(bot):
     bot.add_cog(Admin(bot))
