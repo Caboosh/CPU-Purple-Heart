@@ -39,6 +39,12 @@ Proper Syntax for commands are:
         await ctx.send('Pulling Updates from Repo...')
 
     @git.command()
+    async def repo(self, ctx):
+        """Brings up the Repo of the bot (useful if people want to know where the fork is from)"""
+        await ctx.send('''`This bot was coded by Cabooshy#6969 in the discord.py rewrite! 
+        Nep's github repo is: https://github.com/Caboosh/CPU-Purple-Heart/`''')
+
+    @git.command()
     async def help(self, ctx):
         """Quick Help Command"""
         await ctx.send('''```Commands:
