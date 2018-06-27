@@ -40,7 +40,9 @@ class General:
                 value="{0.name} (ID {0.id})".format(voice_state.channel),
                 inline=False,
             )
-        data.set_footer(text="Member #{} | User ID: {}").format(member_number, user.id)
+        data.set_footer(
+            text="Breaking the 4th wall on discord since 15 May 2018",
+            icon_url="https://caboosh.s-ul.eu/oSqCT9e5.png")
 
         name = str(user)
         name = " ~ ".join((name, user.nick)) if user.nick else name
@@ -66,7 +68,7 @@ class General:
 
         if not user:
             user = author
-
+            
         roles = [x.name for x in user.roles if x.name != "@everyone"]
 
         joined_at = self.fetch_joined_at(user, server)
