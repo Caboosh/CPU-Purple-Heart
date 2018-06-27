@@ -1,20 +1,24 @@
-from discord.ext.commands import is_owner
+import traceback
+
+import aiohttp
+
 import cogs.checks as checks
-from discord.ext import commands
-import asyncio
+
 import discord
-import textwrap
-import io
+
+from discord.ext.commands import errors
+from discord.ext import commands
 
 
 class Admin:
     """The Admin Commands, Right now only callable by Cabooshy, for reasons.. i guess."""
+
     def __init__(self, bot):
         self.bot = bot
 
     def cleanup_code(self, content):
         """does the cleaning up job, lol"""
-    # removing the ```py\n```
+        # removing the ```py\n```
         if content.startswith('```') and content.endswith('```'):
             return '\n'.join(content.split('\n')[1:-1])
         # remove `foo`
@@ -115,20 +119,24 @@ class Admin:
             await ctx.send('\N{OK HAND SIGN}')
 
     @commands.command()
-    @checks.check_guild_permissions(ctx, perms)
-    async def avatar(self, url):
+    async def avatar(self, ctx, url: str):
         """Sets Nep's avatar"""
-        try:
-            async with self.session.get(url) as r:
+        async with aiohttp.ClientSession() as session:
+            async with session.get(url) as r:
                 data = await r.read()
-            await self.bot.edit_profile(self.bot.settings.password, avatar=data)
-            await self.bot.say("Done.")
-            log.debug("changed avatar")
-        except Exception as e:
-            await self.bot.say("Error, check your console or logs for "
-                               "more information.")
-            log.exception(e)
-            traceback.print_exc()
+            try:
+                await ctx.bot.user.edit(avatar=data)
+            except discord.HTTPException:
+                await ctx.send(
+                    "Failed. Remember that you can edit the avatar "
+                    "up to two times a hour. The URL must be a "
+                    "direct link to a JPG / PNG."
+                )
+            except discord.InvalidArgument:
+                await ctx.send("JPG / PNG format only.")
+            else:
+                await ctx.send("Done.")
+
 
 def setup(bot):
     bot.add_cog(Admin(bot))
