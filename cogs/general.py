@@ -1,8 +1,6 @@
 import datetime
 import discord
 from discord.ext import commands
-from discord import member
-
 
 
 class General:
@@ -68,7 +66,7 @@ class General:
 
         if not user:
             user = author
-            
+
         roles = [x.name for x in user.roles if x.name != "@everyone"]
 
         joined_at = self.fetch_joined_at(user, server)
