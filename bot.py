@@ -53,7 +53,7 @@ async def info(ctx):
     days_since = (datetime.datetime.utcnow() - since).days
     dpy_version = "[{}]({})".format(discord.__version__, dpy_repo)
     python_version = "[{}.{}.{}]({})".format(*sys.version_info[:3], python_url)
-    nep_version = "[` Ver. {} `]".format(botversion)
+    nep_version = "`[ Ver. {} ]`".format(botversion)
     app_info = await bot.application_info()
     owner = app_info.owner
     about = (
