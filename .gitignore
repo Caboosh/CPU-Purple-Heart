@@ -1,5 +1,6 @@
 .idea
 __pycache__
 bot-env
-botconfig.py
+venv
+/botconfig.py
 *.zip
