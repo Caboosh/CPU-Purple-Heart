@@ -12,6 +12,8 @@ from botconfig import botdesc
 initial_extensions = [
     'cogs.admin',
     'cogs.git',
+    'cogs.cogloading',
+    'cogs.general'
 
 ]
 botversion = '0.1a'
@@ -25,7 +27,6 @@ if __name__ == '__main__':
             print(f'Failed to load extension {extension}.', file=sys.stderr)
             traceback.print_exc()
 
-
 @bot.event
 async def on_ready():
     print('=======================')
@@ -38,7 +39,7 @@ async def on_ready():
 @bot.command()
 async def ping(ctx):
     """Pings the bot and responds with the response time in ms"""
-    await ctx.send('Pong! Took: {0}ms'.format(round(bot.latency, 3)))
+    await ctx.send('Pong! Took: {0} ms'.format(round(bot.latency, 3)))
 
 
 @bot.command()
@@ -52,7 +53,7 @@ async def info(ctx):
     days_since = (datetime.datetime.utcnow() - since).days
     dpy_version = "[{}]({})".format(discord.__version__, dpy_repo)
     python_version = "[{}.{}.{}]({})".format(*sys.version_info[:3], python_url)
-    nep_version = "[{}]".format(botversion)
+    nep_version = "[` Ver. {} `]".format(botversion)
     app_info = await bot.application_info()
     owner = app_info.owner
     about = (
@@ -74,6 +75,6 @@ async def info(ctx):
         await ctx.send(embed=embed)
     except discord.HTTPException:
         await ctx.send("I need the `Embed links` permission to send this")
-    bot.add_command(info)
+
 
 bot.run(token)
