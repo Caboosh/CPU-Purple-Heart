@@ -1,6 +1,7 @@
 import datetime
 import discord
 from discord.ext import commands
+from botconfig import prefix
 
 
 class General:
@@ -66,6 +67,24 @@ class General:
             await ctx.send(embed=data)
         except discord.HTTPException:
             await ctx.send("I need the `Embed links` permission to send this.")
+
+    @commands.group(invoke_without_command=True)
+    async def echo(self, ctx):
+       await ctx.send("""```python
+Usage: {}echo 'Subcommand' 'Word/String/Int to Echo'```""".format(prefix))
+
+    @echo.command()
+    async def word(self, ctx, arg):
+        try:
+            await ctx.send(arg)
+        except discord.HTTPException:
+            user = discord.Client.get_user(discord.User.discriminator)
+            if user is not None:
+                await user.send("I need to be able to send messages to echo!")
+
+    @echo.command()
+    async def string(self, ctx, arg):
+        await ctx.send(arg)
 
 
 def setup(bot):

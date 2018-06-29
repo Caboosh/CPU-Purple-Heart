@@ -26,6 +26,12 @@ Proper Syntax for commands are:
         """Pushes changes to the repo"""
         await ctx.send('Pushing to {} {}'.format(remote, branch))
 
+    @push.error
+    async def push_handler(self, ctx, error):
+        if isinstance(error, commands.MissingRequiredArgument):
+            if error.param.name == 'remote' and 'branch':
+                await ctx.send("You are missing the remote and branch!")
+
     @git.command()
     async def pull(self, ctx):
         """Pulls the latest commit from the repo"""

@@ -8,7 +8,6 @@ from botconfig import token
 from botconfig import prefix
 from botconfig import botdesc
 
-
 initial_extensions = [
     'cogs.admin',
     'cogs.git',
@@ -16,8 +15,16 @@ initial_extensions = [
     'cogs.general'
 
 ]
+
 botversion = '0.1a'
 bot = commands.Bot(command_prefix=prefix, description=botdesc, pm_help=True)
+
+
+@bot.event
+async def on_command_error(ctx, error):
+    if isinstance(error, commands.MissingRequiredArgument):
+        if error.param.name == 'arg':
+            await ctx.send("You forgot to give me input to repeat, silly!")
 
 if __name__ == '__main__':
     for extension in initial_extensions:
@@ -27,6 +34,7 @@ if __name__ == '__main__':
             print(f'Failed to load extension {extension}.', file=sys.stderr)
             traceback.print_exc()
 
+
 @bot.event
 async def on_ready():
     print('=======================')
@@ -34,6 +42,7 @@ async def on_ready():
     print(bot.user.name)
     print(bot.user.id)
     print('=======================')
+    await bot.change_presence(game=discord.Game(name='The Sunset in Lastation... With Noire, of course.', type=3))
 
 
 @bot.command()
@@ -58,7 +67,7 @@ async def info(ctx):
     owner = app_info.owner
     about = (
         "This is an instance of [Cpu Purple Heart, an open source Discord bot]({}) "
-        "created by [Cabooshy]({}).".format(nep_repo, author_repo,))
+        "created by [Cabooshy]({}).".format(nep_repo, author_repo, ))
 
     embed = discord.Embed(colour=discord.Colour(0xb675c7))
     embed.set_author(name="CPU Purple Heart", icon_url="https://caboosh.s-ul.eu/oSqCT9e5.png")
