@@ -1,12 +1,8 @@
 import datetime
 import traceback
-
 import aiohttp
-
 import cogs.checks as checks
-
 import discord
-
 from discord.ext.commands import errors
 from discord.ext import commands
 
