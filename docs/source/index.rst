@@ -1,14 +1,10 @@
-.. CPU Purple Heart documentation master file, created by
-   sphinx-quickstart on Sun Jul  1 11:56:41 2018.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
-Welcome to CPU Purple Heart's documentation!
+Welcome to CPU Purple Heart's docs and wiki!
 ============================================
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+
 
 
 
@@ -18,3 +14,5 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+
