@@ -21,4 +21,4 @@ basically, the botconfig.py should look like this:
 prefix='Prefix Here'
 token='Token Here'
 botdesc='The Bot Description here'
-```
+``` 
