@@ -37,5 +37,7 @@ a kick with all messages deleted""")
         except discord.HTTPException:
             await ctx.send("I need the `Embed links` permission to send this")
 
+
 def setup(bot):
+    bot.remove_command("help")
     bot.add_cog(Help(bot))
