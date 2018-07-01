@@ -1,3 +1,5 @@
+.. _windows-install:
+
 =============================
 Installing the bot on Windows
 =============================
