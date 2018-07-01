@@ -18,7 +18,7 @@ initial_extensions = [
 
 botversion = '0.1a'
 bot = commands.Bot(command_prefix=prefix, description=botdesc, pm_help=True)
-
+bot.remove_command("help")
 
 @bot.event
 async def on_command_error(ctx, error):
