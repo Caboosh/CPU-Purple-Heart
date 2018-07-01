@@ -20,11 +20,11 @@
 # -- Project information -----------------------------------------------------
 
 project = 'CPU Purple Heart'
-copyright = '2018, Cabooshy'
-author = 'Cabooshy'
+copyright = '2018, Caboosh'
+author = 'Caboosh'
 
 # The short X.Y version
-version = '0.2a'
+version = ''
 # The full version, including alpha/beta/rc tags
 release = '0.2a'
 
@@ -39,6 +39,12 @@ release = '0.2a'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'sphinx.ext.autodoc',
+    'sphinx.ext.doctest',
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.todo',
+    'sphinx.ext.coverage',
+    'sphinx.ext.viewcode',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -63,7 +69,7 @@ language = None
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path .
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = []
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
@@ -129,7 +135,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'CPUPurpleHeart.tex', 'CPU Purple Heart Documentation',
-     'Cabooshy', 'manual'),
+     'Caboosh', 'manual'),
 ]
 
 
@@ -153,3 +159,16 @@ texinfo_documents = [
      author, 'CPUPurpleHeart', 'One line description of project.',
      'Miscellaneous'),
 ]
+
+
+# -- Extension configuration -------------------------------------------------
+
+# -- Options for intersphinx extension ---------------------------------------
+
+# Example configuration for intersphinx: refer to the Python standard library.
+intersphinx_mapping = {'https://docs.python.org/': None}
+
+# -- Options for todo extension ----------------------------------------------
+
+# If true, `todo` and `todoList` produce output, else they produce nothing.
+todo_include_todos = True
