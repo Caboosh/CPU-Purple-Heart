@@ -18,7 +18,7 @@ initial_extensions = [
 ]
 
 botversion = '0.1a'
-bot = commands.Bot(command_prefix=prefix, description=botdesc)
+bot = commands.Bot(command_prefix=prefix, description=botdesc, dm_help=False)
 
 
 
@@ -44,7 +44,6 @@ async def on_ready():
     print(bot.user.name)
     print(bot.user.id)
     print('=======================')
-    await bot.remove_command("help")
     await bot.change_presence(game=discord.Game(name='The Sunset in Lastation... With Noire, of course.', type=3))
 
 
