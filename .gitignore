@@ -4,3 +4,4 @@ bot-env
 venv
 /botconfig.py
 *.zip
+requirements.txt
