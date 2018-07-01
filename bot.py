@@ -12,13 +12,15 @@ initial_extensions = [
     'cogs.admin',
     'cogs.git',
     'cogs.cogloading',
+    # 'cogs.help',
     'cogs.general'
 
 ]
 
 botversion = '0.1a'
-bot = commands.Bot(command_prefix=prefix, description=botdesc, pm_help=True)
-bot.remove_command("help")
+bot = commands.Bot(command_prefix=prefix, description=botdesc)
+
+
 
 @bot.event
 async def on_command_error(ctx, error):
@@ -42,6 +44,7 @@ async def on_ready():
     print(bot.user.name)
     print(bot.user.id)
     print('=======================')
+    await bot.remove_command("help")
     await bot.change_presence(game=discord.Game(name='The Sunset in Lastation... With Noire, of course.', type=3))
 
 
