@@ -15,9 +15,6 @@ Nep can do pretty much what other bots can do, and more!
 
 Documentation Contents
 ----------------------
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
    :ref:`about`
    :ref:`gettingstarted`
    :ref:`commands`
@@ -37,3 +34,6 @@ If you are looking for a specific area of the docs, use one the pages below:
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
