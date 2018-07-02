@@ -13,6 +13,12 @@ Nep can do pretty much what other bots can do, and more!
 - The odd Nep style quote
 - Much, Much more!
 
+**Nep's Requirements:**
+- A minimum of Python 3.6 
+- discord.py rewrite 1.0.0a
+- A Windows or Linux machine (i'm sure someone with mac experience can help with this)
+- A way to keep to bot running, if possible
+
 Documentation Contents
 ----------------------
 * :ref:`about`
