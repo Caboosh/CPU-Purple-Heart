@@ -18,11 +18,11 @@ Documentation Contents
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-   about
-   gettingstarted
-   commands
-   economy
-   gitcontrols
+   :ref:`about`
+   :ref:`gettingstarted`
+   :ref:`commands`
+   :ref:`economy`
+   :ref:`gitcontrols`
 
 
 
