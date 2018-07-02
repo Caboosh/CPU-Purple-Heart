@@ -10,3 +10,6 @@ Lets start off with getting python installed, download the `latest version <http
 if you want to try Python 3.7, then go ahead, and if there are any problems, open an issue and i will update my venv so i can test these
 
 .. image:: https://caboosh.s-ul.eu/clYvRb74.png
+
+Go through the install process, making sure to add Python to your PATH. this is usually a checkbox on the lower of the install window.
+.. image:: https://caboosh.s-ul.eu/W8TEBrvZ.png
