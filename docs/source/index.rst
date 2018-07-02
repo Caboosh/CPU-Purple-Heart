@@ -15,11 +15,11 @@ Nep can do pretty much what other bots can do, and more!
 
 Documentation Contents
 ----------------------
-   :ref:`about`
-   :ref:`gettingstarted`
-   :ref:`commands`
-   :ref:`economy`
-   :ref:`gitcontrols`
+* :ref:`about`
+* :ref:`gettingstarted`
+* :ref:`commands`
+* :ref:`economy`
+* :ref:`gitcontrols`
 
 
 
@@ -34,6 +34,7 @@ If you are looking for a specific area of the docs, use one the pages below:
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
