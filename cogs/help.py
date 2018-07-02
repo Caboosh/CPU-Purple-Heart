@@ -57,7 +57,7 @@ She also does normal bot stuff, because y'know, that's important too right.""", 
         except discord.HTTPException:
             await ctx.send("I need the `Embed links` permission to send this")
 
-    @bothelp.command
+    @help.command
     async def two(self, ctx):
         since = datetime.datetime(2018, 5, 15, 0, 0)
         days_since = (datetime.datetime.utcnow() - since).days
@@ -70,6 +70,9 @@ She also does normal bot stuff, because y'know, that's important too right.""", 
         embed.add_field(name="{}botavatar".format(prefix), value="Changes Nep's Avatar", inline=False)
         embed.add_field(name="{}massban".format(prefix), value="Displays the Repo of the bot", inline=False)
         embed.add_field(name="{}softban".format(prefix), value="""Soft Bans a member from the server""",inline=False)
+        embed.set_footer(
+            text="Breaking the 4th wall on discord since 15 May 2018 ({} days ago!)".format(days_since),
+            icon_url="https://caboosh.s-ul.eu/oSqCT9e5.png")
         try:
             await ctx.send(embed=embed)
         except discord.HTTPException:
