@@ -70,7 +70,8 @@ class General:
 
     @commands.group(invoke_without_command=True)
     async def echo(self, ctx):
-       await ctx.send("""```python
+        """Echos an input from the user."""
+        await ctx.send("""```python
 Usage: {}echo 'Subcommand' 'Word/String/Int to Echo'```""".format(prefix))
 
     @echo.command()
