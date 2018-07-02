@@ -7,6 +7,8 @@ from discord.ext import commands
 from botconfig import token
 from botconfig import prefix
 from botconfig import botdesc
+from botconfig import botversion
+from botconfig import since
 
 initial_extensions = [
     'cogs.admin',
@@ -17,7 +19,6 @@ initial_extensions = [
 
 ]
 
-botversion = '0.1a'
 bot = commands.Bot(command_prefix=prefix, description=botdesc, dm_help=False)
 
 
@@ -60,7 +61,6 @@ async def info(ctx):
     nep_repo = author_repo + "/CPU-Purple-Heart"
     dpy_repo = "https://github.com/Rapptz/discord.py"
     python_url = "https://www.python.org/"
-    since = datetime.datetime(2018, 5, 15, 0, 0)
     days_since = (datetime.datetime.utcnow() - since).days
     dpy_version = "[{}]({})".format(discord.__version__, dpy_repo)
     python_version = "[{}.{}.{}]({})".format(*sys.version_info[:3], python_url)
