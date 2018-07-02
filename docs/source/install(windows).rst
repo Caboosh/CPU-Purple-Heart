@@ -19,3 +19,9 @@ Now, we need to download nep, so to do that, `head here <https://github.com/Cabo
 
 .. image:: https://caboosh.s-ul.eu/jjb4Nxlr.png
 
+Extract the bot to somewhere that is easy to access, like the desktop, and to make sure we don't screw about with our system install of python, we are going to utilise the virtualenv to create a virtual python environment for our bot to use. To do this, open up command prompt, and run this command:
+
+.. code-block:: doscon
+
+    python3 -m venv /path/to/new/virtual/environment
+
