@@ -23,5 +23,8 @@ Extract the bot to somewhere that is easy to access, like the desktop, and to ma
 
 .. code-block:: doscon
 
-    python3 -m venv /path/to/new/virtual/environment
+    python3 -m venv /path/to/new/virtual/environment (The Dir you put the bot in basically)
+
+This allows us to separate the bot's packages from the system install, so it does not clutter the system install.
+Now, we can start installing Nep's Dependencies, the download should contain a requirements.txt, which we will use to install the requriements for the bot
 
