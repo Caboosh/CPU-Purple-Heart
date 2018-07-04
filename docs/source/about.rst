@@ -15,6 +15,7 @@ Commands List:
 ==============
 
 So far, the bot has:
+[p] is the bot prefix, so substitute it to whatever you are using for your prefix.
 
 ================  ===============================================================================================
 General Commands  Command Reference (Command Syntax and what they accept)
@@ -25,7 +26,6 @@ General Commands  Command Reference (Command Syntax and what they accept)
 [p]echo string    Echos a string given to the bot
 ================  ===============================================================================================
 
-
 ================  =====================================================================================
 Admin Commands    Command Reference (Command Syntax and what they accept)
 ================  =====================================================================================
@@ -35,13 +35,13 @@ Admin Commands    Command Reference (Command Syntax and what they accept)
 [p]botavatar      Changes the Bot's avatar (Owner Only)
 ================  =====================================================================================
 
-
-==============================  ==============================================================================
-Git Commands (needs GitPython)  Command Reference (Command Syntax and what they accept)
-==============================  ==============================================================================
-[p]git                          The Main git command, returns "invalid syntax" when no command is given
-[p]git push <remote> <branch>   Pushes to the specified remote and origin
-[p]git pull                     Pulls from the origin server
-[p]git repo                     Brings up the repo of the main bot, for easy reference of the main repo
-[p]git help                     Shows all the commands there with their syntax
-==============================  ===============================================================================
+=================  =======================================================================
+Git Commands
+(needs GitPython)  Command Reference (Command Syntax and what they accept)
+=================  =======================================================================
+[p]git             The Main git command, returns "invalid syntax" when no command is given
+[p]git push        Syntax: <remote> <branch> . Pushes to the specified remote and origin
+[p]git pull        Pulls from the origin server
+[p]git repo        Brings up the repo of the main bot, for easy reference of the main repo
+[p]git help        Shows all the commands there with their syntax
+=================  =======================================================================
