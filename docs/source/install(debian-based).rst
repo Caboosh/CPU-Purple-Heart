@@ -32,4 +32,12 @@ as Python 3.6 is in the universe repo for these versions of ubuntu.
 17.10 and up have 3.6 installed by default.
 
 
-Then, we need to download Nep, you can do this however you want, but i'd downloading the latest release of the bot from the releases, and extracting the bot to a place you can easily access, such as your desktop.
+Then, we need to download Nep, you can do this however you want, but i'd recommend downloading the latest release of the bot from the releases, and extracting the bot to a place you can easily access, such as your desktop.
+
+This is usually located under:
+
+.. code-block:: console
+
+    /home/USERNAME/Desktop
+
+Or if you are using the terminal on a server it will be ~/Desktop
