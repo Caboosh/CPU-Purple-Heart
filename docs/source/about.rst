@@ -15,6 +15,7 @@ Commands:
 =========
 
 So far, the bot has:
+
 + The ability to do some basic things, like echo commands, show profiles, and set its playing status and avy.
 + The ability to load cogs, so she can be extended however you need to.
 + The ability (with some tinkering) to push and pull to a specified repo (usually good to set it up to a fork if you have forked her)
