@@ -87,4 +87,11 @@ async def info(ctx):
         await ctx.send("I need the `Embed links` permission to send this")
 
 
+@bot.command()
+async def game(ctx, status: str, type: int):
+    """Sets Nep's playing status"""
+    await bot.change_presence(game=discord.Game(name=status, type=type))
+    await ctx.send("Status set.")
+
+
 bot.run(token)

@@ -55,3 +55,20 @@ We can then proceed to setting up the botconfig.py file, which you can copy and 
     botdesc = '''The Description of the bot if being used for other uses apart from being Nep'''
 
 You can remove the comments, and fill out the parts as required, the bot will have a default prefix of _ if no prefix is found here, so you are not stuck without access to the bot's commands.
+
+now you have the bot ready to run, we need to do some setup work first, we need to make sure python venv is installed on our system, to do this run:
+
+.. code-block:: console
+
+    $ sudo apt-get-install python3-venv
+
+Which installs the virtual environment requirements so that we can create virtual environments for python.
+
+Next, navigate to the bot's install folder, and run:
+
+.. code-block:: console
+
+    $ python3.6 -m venv
+
+this creates a new python virtual environment for us to install all of the bot's dependencies to.
+

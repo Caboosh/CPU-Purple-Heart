@@ -82,12 +82,6 @@ Usage: {}echo 'Subcommand' 'Word/String/Int to Echo'```""".format(prefix))
     async def string(self, ctx, *, string: str):
         await ctx.send(string)
 
-    @commands.command()
-    async def game(self, ctx, *, status: str, gametype: int):
-        """Sets Nep's playing status"""
-        await ctx.bot.change_presence(game=discord.Game(name=status, type=gametype))
-        await ctx.send("Status set.")
-
 
 def setup(bot):
     bot.add_cog(General(bot))
