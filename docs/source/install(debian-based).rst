@@ -76,7 +76,7 @@ Now, we need to set it as the source location for us to install the dependincies
 
 .. code-block:: console
 
-    $ source /path/to/venv/bin/activate
+    $ source /path/to/bot/folder/bin/activate
 
 what this does is set the virtual environment as the source for the current shell session and not as a subprocess, that way, the variables dont dissapear like they would if invoked as a subprocess.
 
