@@ -41,3 +41,16 @@ This is usually located under:
     /home/USERNAME/Desktop
 
 Or if you are using the terminal on a server it will be ~/Desktop
+
+We can then proceed to setting up the botconfig.py file, which you can copy and paste from the example bundled with the bot, which looks like this:
+
+.. code-block:: python
+
+    # This is named the way it is so it doesn't conflict with an existing installation, and serves as a way to showcase the layout of this botconfig.py file
+    # Rename this file to botconfig.py to use it and remove these comments
+
+    prefix = 'Enter your Prefix here'
+    token = 'Put your token here'
+    botdesc = '''The Description of the bot if being used for other uses apart from being Nep'''
+
+You can remove the comments, and fill out the parts as required, the bot will have a default prefix of _ if no prefix is found here, so you are not stuck without access to the bot's commands.
