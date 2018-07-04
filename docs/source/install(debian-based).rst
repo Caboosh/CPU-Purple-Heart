@@ -46,7 +46,8 @@ We can then proceed to setting up the botconfig.py file, which you can copy and 
 
 .. code-block:: python
 
-    # This is named the way it is so it doesn't conflict with an existing installation, and serves as a way to showcase the layout of this botconfig.py file
+    # This is named the way it is so it doesn't conflict with an existing installation,
+    # and serves as a way to showcase the layout of this botconfig.py file.
     # Rename this file to botconfig.py to use it and remove these comments
 
     prefix = 'Enter your Prefix here'

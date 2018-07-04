@@ -76,16 +76,17 @@ Usage: {}echo 'Subcommand' 'Word/String/Int to Echo'```""".format(prefix))
 
     @echo.command()
     async def word(self, ctx, arg):
-        try:
-            await ctx.send(arg)
-        except discord.HTTPException:
-            user = discord.Client.get_user(discord.User.discriminator)
-            if user is not None:
-                await user.send("I need to be able to send messages to echo!")
+        await ctx.send(arg)
 
     @echo.command()
-    async def string(self, ctx, arg):
-        await ctx.send(arg)
+    async def string(self, ctx, *, string: str):
+        await ctx.send(string)
+
+    @commands.command()
+    async def game(self, ctx, *, status: str, gametype: int):
+        """Sets Nep's playing status"""
+        await ctx.bot.change_presence(game=discord.Game(name=status, type=gametype))
+        await ctx.send("Status set.")
 
 
 def setup(bot):

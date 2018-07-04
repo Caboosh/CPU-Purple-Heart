@@ -22,7 +22,6 @@ initial_extensions = [
 bot = commands.Bot(command_prefix=prefix, description=botdesc, dm_help=False)
 
 
-
 @bot.event
 async def on_command_error(ctx, error):
     if isinstance(error, commands.MissingRequiredArgument):
