@@ -16,8 +16,20 @@ Commands List:
 
 So far, the bot has:
 
-+
-|
-|
-|
-|
+================  ======================================================================================================================
+General Commands  Command Reference (Command Syntax and what they accept)
+================  ======================================================================================================================
+[p]profile        Shows the User's profile in an embed, so far, cannot accepts a mention to choose another user, this is being worked on
+[p]echo           Echos input from a user, by default just invoking echo will show how to use the command
+[p]echo word      Echos a word given to the bot
+[p]echo string    Echos a string given to the bot
+================  =======================================================================================================================
+
+================  ======================================================================================================================
+Admin Commands    Command Reference (Command Syntax and what they accept)
+================  ======================================================================================================================
+[p]ban       Shows the User's profile in an embed, so far, cannot accepts a mention to choose another user, this is being worked on
+[p]massvan           Echos input from a user, by default just invoking echo will show how to use the command
+[p]echo word      Echos a word given to the bot
+[p]echo string    Echos a string given to the bot
+================  =======================================================================================================================
