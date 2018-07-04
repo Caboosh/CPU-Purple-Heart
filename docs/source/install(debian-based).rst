@@ -68,7 +68,23 @@ Next, navigate to the bot's install folder, and run:
 
 .. code-block:: console
 
-    $ python3.6 -m venv
+    $ python3.6 -m venv /path/to/bot/folder
 
 this creates a new python virtual environment for us to install all of the bot's dependencies to.
+
+Now, we need to set it as the source location for us to install the dependincies to, we do this by running:
+
+.. code-block:: console
+
+    $ source /path/to/venv/bin/activate
+
+what this does is set the virtual environment as the source for the current shell session and not as a subprocess, that way, the variables dont dissapear like they would if invoked as a subprocess.
+
+Now we can install the bot's requirements from the bundled requirements.txt file (this is not in the repo, due it conflicting with RTFD and causing sphinx to fail builds):
+
+.. code-block:: console
+
+    $ pip install -r requirements.txt
+
+
 
