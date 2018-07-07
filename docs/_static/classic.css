@@ -7,7 +7,7 @@
  * :copyright: Copyright 2007-2018 by the Sphinx team, see AUTHORS.
  * :license: BSD, see LICENSE for details.
  *
- * Customised for the CPU-Purple-Heard Wiki and docs, the bot coded by Caboosh
+ * Customised for the CPU-Purple-Heart Wiki and docs, the bot coded by Caboosh
  */
 
 @import url("basic.css");
@@ -17,7 +17,6 @@
 body {
     font-family: sans-serif;
     font-size: 100%;
-    background-color: #11303d;
     color: #000;
     margin: 0;
     padding: 0;
