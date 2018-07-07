@@ -34,7 +34,7 @@ Installing the bot
 ------------------
 * :ref:`windows-install`
 * :ref:`debian-based-install`
-
+* :ref:`macos-install`
 
 If you are looking for a specific area of the docs, use one the pages below:
 

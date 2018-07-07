@@ -33,4 +33,59 @@ as Python 3.6 is in the universe repo for these versions of ubuntu.
 
 Right now Python 3.7 does not work with the libary, i have tested it and it refuses to work properly, so stick to the 3.6 releases for now.
 
-Then, we need to download Nep, you can do this however you want, but i'd downloading the latest release of the bot from the releases, and extracting the bot to a place you can easily access, such as your desktop.
+Then, we need to download Nep, you can do this however you want, but i'd recommend downloading the latest release of the bot from the releases, and extracting the bot to a place you can easily access, such as your desktop.
+
+This is usually located under:
+
+.. code-block:: console
+
+    /home/USERNAME/Desktop
+
+Or if you are using the terminal on a server it will be ~/Desktop
+
+We can then proceed to setting up the botconfig.py file, which you can copy and paste from the example bundled with the bot, which looks like this:
+
+.. code-block:: python
+
+    # This is named the way it is so it doesn't conflict with an existing installation,
+    # and serves as a way to showcase the layout of this botconfig.py file.
+    # Rename this file to botconfig.py to use it and remove these comments
+
+    prefix = 'Enter your Prefix here'
+    token = 'Put your token here'
+    botdesc = '''The Description of the bot if being used for other uses apart from being Nep'''
+
+You can remove the comments, and fill out the parts as required, the bot will have a default prefix of _ if no prefix is found here, so you are not stuck without access to the bot's commands.
+
+now you have the bot ready to run, we need to do some setup work first, we need to make sure python venv is installed on our system, to do this run:
+
+.. code-block:: console
+
+    $ sudo apt-get-install python3-venv
+
+Which installs the virtual environment requirements so that we can create virtual environments for python.
+
+Next, navigate to the bot's install folder, and run:
+
+.. code-block:: console
+
+    $ python3.6 -m venv /path/to/bot/folder
+
+this creates a new python virtual environment for us to install all of the bot's dependencies to.
+
+Now, we need to set it as the source location for us to install the dependincies to, we do this by running:
+
+.. code-block:: console
+
+    $ source /path/to/bot/folder/bin/activate
+
+what this does is set the virtual environment as the source for the current shell session and not as a subprocess, that way, the variables dont dissapear like they would if invoked as a subprocess.
+
+Now we can install the bot's requirements from the bundled requirements.txt file (this is not in the repo, due it conflicting with RTFD and causing sphinx to fail builds):
+
+.. code-block:: console
+
+    $ pip install -r requirements.txt
+
+
+
