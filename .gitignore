@@ -3,6 +3,6 @@ __pycache__
 bot-env
 venv
 venv3.6
-/botconfig.py
+*.py
 *.zip
-requirements.txt
+cogs
