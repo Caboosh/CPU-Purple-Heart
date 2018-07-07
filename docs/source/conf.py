@@ -26,7 +26,7 @@ author = 'Caboosh'
 # The short X.Y version
 version = ''
 # The full version, including alpha/beta/rc tags
-release = '0.2a'
+release = '0.3a'
 
 
 # -- General configuration ---------------------------------------------------

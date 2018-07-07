@@ -31,5 +31,6 @@ as Python 3.6 is in the universe repo for these versions of ubuntu.
 
 17.10 and up have 3.6 installed by default.
 
+Right now Python 3.7 does not work with the libary, i have tested it and it refuses to work properly, so stick to the 3.6 releases for now.
 
 Then, we need to download Nep, you can do this however you want, but i'd downloading the latest release of the bot from the releases, and extracting the bot to a place you can easily access, such as your desktop.
