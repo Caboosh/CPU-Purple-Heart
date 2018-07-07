@@ -1,5 +1,5 @@
 # CPU Purple Heart
-[![Documentation Status](//readthedocs.org/projects/cpu-purple-heart/badge/?version=latest)](http://cpuneptune.cameronmiller.me/?badge=latest)
+
 ![Nep Nep](https://caboosh.s-ul.eu/NpVgetoh.png)
 
 The Lovable CPU of Planeptune has smashed the 4th wall hard enough to make it onto discord somehow, don't ask me how, she just did, alrite?
@@ -23,3 +23,7 @@ prefix='Prefix Here'
 token='Token Here'
 botdesc='The Bot Description here'
 ``` 
+
+## Statuses and other bits
+
+[![Documentation Status](http://readthedocs.org/projects/cpu-purple-heart/badge/?version=latest)](http://cpuneptune.cameronmiller.me/?badge=latest)
