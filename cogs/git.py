@@ -1,10 +1,10 @@
 import datetime
-
-import cogs.checks as checks
 from discord.ext import commands
-import asyncio
 import discord
+from github import Github
+from botconfig import githubtoken
 
+g = Github(githubtoken)
 
 class Git:
     """Various GitPython Commands.
@@ -22,17 +22,6 @@ Proper Syntax for commands are:
         """Main Git Command, holds all Git Functions"""
         if ctx.invoked_subcommand is None:
             await ctx.send('Invalid syntax')
-
-    @git.command()
-    async def push(self, ctx, remote: str, branch: str):
-        """Pushes changes to the repo"""
-        await ctx.send('Pushing to {} {}'.format(remote, branch))
-
-    @push.error
-    async def push_handler(self, ctx, error):
-        if isinstance(error, commands.MissingRequiredArgument):
-            if error.param.name == 'remote' and 'branch':
-                await ctx.send("You are missing the remote and branch!")
 
     @git.command()
     async def pull(self, ctx):
