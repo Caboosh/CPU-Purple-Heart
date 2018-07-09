@@ -4,9 +4,11 @@
 import datetime
 
 githubtoken = '''Your Github token, primarily used for the Git cog,
-so you can pull and push changes to the repo of your fork'''
+so you can pull changes and such'''
+
 botversion = 'The Version of the bot (May be different if you are using a personal fork)'
 since = datetime.datetime('Year', 'Month', 'Day')
 prefix = 'Enter your Prefix here'
 token = 'Put your token here'
+
 botdesc = '''The Description of the bot if being used for other uses apart from being Nep'''
