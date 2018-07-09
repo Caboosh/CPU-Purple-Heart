@@ -41,7 +41,3 @@ If you are looking for a specific area of the docs, use one the pages below:
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
