@@ -19,9 +19,17 @@ These varables are imported in the main bot.py as to allow somewhat dynamic chan
 
 basically, the botconfig.py should look like this:
 ```python
-prefix='Prefix Here'
-token='Token Here'
-botdesc='The Bot Description here'
+import datetime
+
+githubtoken = '''Your Github token, primarily used for the Git cog,
+so you can pull and push changes to the repo of your fork'''
+
+botversion = 'The Version of the bot (May be different if you are using a personal fork)'
+since = datetime.datetime('Year', 'Month', 'Day')
+prefix = 'Enter your Prefix here'
+token = 'Put your token here'
+
+botdesc = '''The Description of the bot if being used for other uses apart from being Nep'''
 ``` 
 
 ## Statuses and other bits
