@@ -1,6 +1,12 @@
-# This is named the way it is so it doesn't conflict with an existing installation, and serves as a way to showcase the layout of this botconfig.py file
+# This is named the way it is so it doesn't conflict with an
+# existing installation, and serves as a way to showcase the layout of this botconfig.py file
 # Rename this file to botconfig.py to use it and remove these comments
+import datetime
 
+githubtoken = '''Your Github token, primarily used for the Git cog,
+so you can pull and push changes to the repo of your fork'''
+botversion = 'The Version of the bot (May be different if you are using a personal fork)'
+since = datetime.datetime('Year', 'Month', 'Day')
 prefix = 'Enter your Prefix here'
 token = 'Put your token here'
 botdesc = '''The Description of the bot if being used for other uses apart from being Nep'''
