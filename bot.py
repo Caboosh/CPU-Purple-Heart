@@ -10,16 +10,17 @@ from botconfig import botdesc
 from botconfig import botversion
 from botconfig import since
 
+bot = commands.Bot(command_prefix=prefix, description=botdesc, dm_help=False)
+bot.remove_command("help")
+
 initial_extensions = [
     'cogs.admin',
     'cogs.git',
     'cogs.cogloading',
-    # 'cogs.help',
+    'cogs.help',
     'cogs.general'
 
 ]
-
-bot = commands.Bot(command_prefix=prefix, description=botdesc, dm_help=False)
 
 
 @bot.event
