@@ -1,10 +1,32 @@
-import datetime
-import traceback
 import aiohttp
 import cogs.checks as checks
 import discord
-from discord.ext.commands import errors
 from discord.ext import commands
+
+GENERIC_FORBIDDEN = (
+    "I attempted to do something that Discord denied me permissions for."
+    " Your command failed to successfully complete."
+)
+
+HIERARCHY_ISSUE = (
+    "I tried to add {role.name} to {member.display_name} but that role"
+    " is higher than my highest role in the Discord hierarchy so I was"
+    " unable to successfully add it. Please give me a higher role and "
+    "try again."
+)
+
+USER_HIERARCHY_ISSUE = (
+    "I tried to add {role.name} to {member.display_name} but that role"
+    " is higher than your highest role in the Discord hierarchy so I was"
+    " unable to successfully add it. Please get a higher role and "
+    "try again."
+)
+
+RUNNING_ANNOUNCEMENT = (
+    "I am already announcing something. If you would like to make a"
+    " different announcement please use `{prefix}announce cancel`"
+    " first."
+)
 
 
 class Admin:
@@ -12,22 +34,6 @@ class Admin:
 
     def __init__(self, bot):
         self.bot = bot
-
-    def cleanup_code(self, content):
-        """does the cleaning up job, lol"""
-        # removing the ```py\n```
-        if content.startswith('```') and content.endswith('```'):
-            return '\n'.join(content.split('\n')[1:-1])
-        # remove `foo`
-        return content.strip('` \n')
-
-    async def __local_check(self, ctx):
-        return await self.bot.is_owner(ctx.author)
-
-    def get_syntax_error(self, e):
-        if e.text is None:
-            return f'```py\n{e.__class__.__name__}: {e}\n```'
-        return f'```py\n{e.text}{"^":>{e.offset}}\n{e.__class__.__name__}: {e}```'
 
     @commands.command()
     @commands.guild_only()
