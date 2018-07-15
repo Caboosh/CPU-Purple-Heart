@@ -21,9 +21,6 @@ basically, the botconfig.py should look like this:
 ```python
 import datetime
 
-githubtoken = '''Your Github token, primarily used for the Git cog,
-so you can pull changes and such'''
-
 botversion = 'The Version of the bot (May be different if you are using a personal fork)'
 since = datetime.datetime('Year', 'Month', 'Day')
 prefix = 'Enter your Prefix here'
