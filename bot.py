@@ -111,16 +111,16 @@ Such as [this one](https://github.com/noahc3/auto-h-encore/releases). which down
     - IMCExtend - [Download](https://github.com/SKGleba/IMCExtend).
     Instructions are on the repo. (THIS IS A PCH-2XXX(SLIM) and PS(Vita)TV MOD, DO NOT ATTEMPT THIS ON THE PCH-1XXX MODELS).
     
-    - NoNpDRM - [Download](https://github.com/TheOfficialFloW/NoNpDrm). 
+    - NoNpDRM - [Download](https://github.com/TheOfficialFloW/NoNpDrm/releases). 
     Install instructions are on the repo.
     
     - Adrenaline 6.61 - [v6.6 Download](https://github.com/TheOfficialFloW/Adrenaline/releases/tag/v6.6).  
     Instructions on the repo.
     
-    - VitaShell - [Download](https://github.com/TheOfficialFloW/VitaShell/releases/tag/1.94). 
+    - VitaShell - [Download](https://github.com/TheOfficialFloW/VitaShell/releases). 
     This can be used as an alternative to the Molecule Branded version of this app. H-Encore gives you the option to install this when you run it.
     
-    - Download Enabler - [Download](https://github.com/TheOfficialFloW/DownloadEnabler/releases/tag/v5.0). 
+    - Download Enabler - [Download](https://github.com/TheOfficialFloW/DownloadEnabler/releases). 
     Allows you to download from the built in web browser, setup is on the repo's readme, so read it!
     
     - VHBB - [Download](http://vhbb.download). 
@@ -146,29 +146,29 @@ async def pg2(ctx):
         description="""
     **Essential Vita Homebrews! Pg-2**
 
-        - ShellSecBat - [Download]). 
+        - ShellSecBat - [Download](https://github.com/OperationNT414C/ShellSecBat/releases). 
         Instructions are on the repo.
 
         - AdrBubbleBooter - [Download]().
         Instructions are on the repo.
 
-        - RetroArch - [Download](). 
+        - RetroArch - [Download](https://buildbot.libretro.com/stable/1.7.3/playstation/vita/RetroArch.vpk). 
         Install instructions are on the repo.
 
-        - CTManager - [Download]().  
+        - CTManager - [Download](https://bitbucket.org/Red_Squirrel/custom-themes-manager/downloads/CTManager.vpk).  
         Instructions on the repo.
 
-        - Theme Manager Ex (if CTManager wont install) - [Download](). 
+        - Theme Manager Ex (if CTManager wont install) - [Download](https://bitbucket.org/kylon/theme-manager-ex-theme-engine/downloads/vtheme.vpk). 
         Instructions on the repo.
 
-        - VitaQuakeII - [Download](). 
-        Instructions on the repo.
+        - VitaQuakeII - [Download](http://vitadb.rinnegatamante.it/#/info/278). 
+        Instructions on the page, alone with the QuakeII Files.
 
-        - VitaQuakeIII - [Download](). 
-        Instructions on the repo.
+        - VitaQuakeIII - [Download](http://vitadb.rinnegatamante.it/#/info/375). 
+         Instructions on the page, alone with the QuakeIII Files.
         
-        - VitaQuake - [Download](). 
-        Instructions on the repo.""")
+        - VitaQuake - [Download](http://vitadb.rinnegatamante.it/#/info/10). 
+        Instructions on the page, alone with the Quake Files.""")
     embed.add_field(name="PAGE 1", value="{}vitainfo".format(prefix))
     embed.add_field(name="PAGE 3", value="{}vitainfo pg3".format(prefix))
     embed.set_author(name="CPU Purple Heart", icon_url="https://caboosh.s-ul.eu/oSqCT9e5.png")
