@@ -15,7 +15,6 @@ bot.remove_command("help")
 
 initial_extensions = [
     'cogs.admin',
-    'cogs.git',
     'cogs.cogloading',
     'cogs.help',
     'cogs.general'
