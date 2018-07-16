@@ -50,7 +50,7 @@ async def on_ready():
 @bot.command()
 async def ping(ctx):
     """Pings the bot and responds with the response time in ms"""
-    await ctx.send('Pong! Took: {0} ms'.format(round(bot.latency, 3)))
+    await ctx.send('Pong! Took: {0} s'.format(round(bot.latency, 3)))
 
 
 @bot.command()
