@@ -2,7 +2,6 @@ import datetime
 import sys
 import traceback
 import discord
-import asyncio
 from discord.ext import commands
 from botconfig import token
 from botconfig import prefix
