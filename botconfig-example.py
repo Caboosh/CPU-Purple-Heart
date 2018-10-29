@@ -3,9 +3,6 @@
 # Rename this file to botconfig.py to use it and remove these comments
 import datetime
 
-githubtoken = '''Your Github token, primarily used for the Git cog,
-so you can pull changes and such'''
-
 botversion = 'The Version of the bot (May be different if you are using a personal fork)'
 since = datetime.datetime('Year', 'Month', 'Day')
 prefix = 'Enter your Prefix here'
