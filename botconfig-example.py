@@ -7,5 +7,6 @@ botversion = 'The Version of the bot (May be different if you are using a person
 since = datetime.datetime('Year', 'Month', 'Day')
 prefix = 'Enter your Prefix here'
 token = 'Put your token here'
+owner = 'put your account ID here (do \@ and mention yourself to get your ID)'
 
 botdesc = '''The Description of the bot if being used for other uses apart from being Nep'''

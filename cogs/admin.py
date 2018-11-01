@@ -1,32 +1,6 @@
 import aiohttp
-import cogs.checks as checks
 import discord
 from discord.ext import commands
-
-GENERIC_FORBIDDEN = (
-    "I attempted to do something that Discord denied me permissions for."
-    " Your command failed to successfully complete."
-)
-
-HIERARCHY_ISSUE = (
-    "I tried to add {role.name} to {member.display_name} but that role"
-    " is higher than my highest role in the Discord hierarchy so I was"
-    " unable to successfully add it. Please give me a higher role and "
-    "try again."
-)
-
-USER_HIERARCHY_ISSUE = (
-    "I tried to add {role.name} to {member.display_name} but that role"
-    " is higher than your highest role in the Discord hierarchy so I was"
-    " unable to successfully add it. Please get a higher role and "
-    "try again."
-)
-
-RUNNING_ANNOUNCEMENT = (
-    "I am already announcing something. If you would like to make a"
-    " different announcement please use `{prefix}announce cancel`"
-    " first."
-)
 
 
 class Admin:
@@ -37,7 +11,7 @@ class Admin:
 
     @commands.command()
     @commands.guild_only()
-    @checks.has_permissions(ban_members=True)
+    @commands.has_permissions(ban_members=True)
     async def ban(self, ctx, member: discord.Member, *, reason: str = None):
         """Bans a member from the server.
         You can also ban from ID to ban regardless whether they're
@@ -45,16 +19,26 @@ class Admin:
         In order for this to work, the bot must have Ban Member permissions.
         To use this command you must have Ban Members permission.
         """
-
         if reason is None:
             reason = f'Action done by {ctx.author} (ID: {ctx.author.id})'
 
         await ctx.guild.ban(discord.Object(id=member), reason=reason)
-        await ctx.send('\N{OK HAND SIGN}')
+        await ctx.send('\N{OK HAND SIGN}, User has been banned for: {}'.format(reason))
+
+    @ban.error
+    async def ban_error(self, ctx, error):
+        if isinstance(error, commands.BadArgument):
+            await ctx.send('You Didn\'t Specify a user to ban stupid.')
+
+    @ban.error
+    async def ban_error(self, ctx, error):
+        if isinstance(error, commands.MissingPermissions):
+            await ctx.send('You dont have the proper Permissions to use this command!')
+
 
     @commands.command()
     @commands.guild_only()
-    @checks.has_permissions(ban_members=True)
+    @commands.has_permissions(ban_members=True)
     async def massban(self, ctx, reason: str, *members: discord.Member):
         """Mass bans multiple members from the server.
         You can also ban from ID to ban regardless whether they're
@@ -70,9 +54,19 @@ class Admin:
 
         await ctx.send('\N{OK HAND SIGN}')
 
+    @massban.error
+    async def massban_error(self, ctx, error):
+        if isinstance(error, commands.BadArgument):
+            await ctx.send('You Didn\'t Specify the users to ban.')
+
+    @massban.error
+    async def massban_error(self, ctx, error):
+        if isinstance(error, commands.MissingPermissions):
+            await ctx.send('You dont have the proper Permissions to use this command!')
+
     @commands.command()
     @commands.guild_only()
-    @checks.has_permissions(kick_members=True)
+    @commands.has_permissions(kick_members=True)
     async def softban(self, ctx, member: discord.Member, *, reason: str = None):
         """Soft bans a member from the server.
         A softban is basically banning the member from the server but
@@ -90,7 +84,18 @@ class Admin:
         await ctx.guild.unban(obj, reason=reason)
         await ctx.send('\N{OK HAND SIGN}')
 
+    @softban.error
+    async def softban_error(self, ctx, error):
+        if isinstance(error, commands.BadArgument):
+            await ctx.send('You Didn\'t Specify a user to ban silly.')
+
+    @softban.error
+    async def softban_error(self, ctx, error):
+        if isinstance(error, commands.MissingPermissions):
+            await ctx.send('You dont have the proper Permissions to use this command!')
+
     @commands.command()
+    @commands.is_owner()
     async def botavatar(self, ctx, url: str):
         """Sets Nep's avatar"""
         async with aiohttp.ClientSession() as session:

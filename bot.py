@@ -8,13 +8,13 @@ from botconfig import prefix
 from botconfig import botdesc
 from botconfig import botversion
 from botconfig import since
+from botconfig import owner
 
-bot = commands.Bot(command_prefix=prefix, description=botdesc, dm_help=False)
+bot = commands.Bot(command_prefix=prefix, description=botdesc, dm_help=False, owner_id=owner)
 bot.remove_command("help")
 
 initial_extensions = [
     'cogs.admin',
-    'cogs.cogloading',
     'cogs.help',
     'cogs.general'
 
@@ -35,7 +35,7 @@ if __name__ == '__main__':
             print(f'Failed to load extension {extension}.', file=sys.stderr)
             traceback.print_exc()
 
-
+# Set On Ready Status, Print Details into Console and Set Presence to allow Visual that Bot is Running.
 @bot.event
 async def on_ready():
     print('=======================')
@@ -43,6 +43,7 @@ async def on_ready():
     print(bot.user.name)
     print(bot.user.id)
     print('=======================')
+    print('Bot Owner: {}' .format(bot.owner_id))
     await bot.change_presence(game=discord.Game(name='The Sunset in Lastation... With Noire, of course.', type=3))
 
 
@@ -55,6 +56,7 @@ async def ping(ctx):
 @bot.command()
 async def info(ctx):
     """Displays information about the bot in its current state"""
+
     author_repo = "https://github.com/Caboosh"
     nep_repo = author_repo + "/CPU-Purple-Heart"
     dpy_repo = "https://github.com/Rapptz/discord.py"
@@ -85,11 +87,12 @@ async def info(ctx):
     except discord.HTTPException:
         await ctx.send("I need the `Embed links` permission to send this")
 
+
 @bot.command()
-async def game(ctx, status: str, type: int):
+async def game(ctx, status: str, url: str, type: int):
     """Sets Nep's playing status"""
-    await bot.change_presence(game=discord.Game(name=status, type=type))
+    await bot.change_presence(game=discord.Game(name=status, url=url, type=type))
     await ctx.send("Status set.")
 
 
-bot.run(token)
+bot.run(token, bot=True, reconnect=True)
