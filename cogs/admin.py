@@ -97,7 +97,7 @@ class Admin:
     @commands.command()
     @commands.is_owner()
     async def botavatar(self, ctx, url: str):
-        """Sets Nep's avatar"""
+        """Sets Vert's avatar"""
         async with aiohttp.ClientSession() as session:
             async with session.get(url) as r:
                 data = await r.read()

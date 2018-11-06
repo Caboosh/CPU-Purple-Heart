@@ -19,8 +19,7 @@ class General:
         if not user:
             user = author
 
-        since = datetime.datetime(2018, 5, 15, 0, 0)
-        days_since = (datetime.datetime.utcnow() - since).days
+
         joined_at = user.joined_at
         since_created = (ctx.message.created_at - user.created_at).days
         since_joined = (ctx.message.created_at - joined_at).days
@@ -81,6 +80,7 @@ Usage: {}echo 'Subcommand' 'Word/String/Int to Echo'```""".format(prefix))
     @echo.command()
     async def string(self, ctx, *, string: str):
         await ctx.send(string)
+
 
 def setup(bot):
     bot.add_cog(General(bot))

@@ -1,7 +1,9 @@
+import asyncio
 import datetime
 import sys
 import traceback
 import discord
+import twitch
 from discord.ext import commands
 from botconfig import token
 from botconfig import prefix
@@ -34,6 +36,8 @@ if __name__ == '__main__':
         except Exception as e:
             print(f'Failed to load extension {extension}.', file=sys.stderr)
             traceback.print_exc()
+
+
 
 # Set On Ready Status, Print Details into Console and Set Presence to allow Visual that Bot is Running.
 @bot.event
